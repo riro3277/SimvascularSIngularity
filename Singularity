@@ -47,11 +47,11 @@ scl enable devtoolset-7 bash
 export LD_LIBRARY_PATH=/opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7:$LD_LIBRARY_PATH
 export PATH=/opt/rh/devtoolset-7/root/usr/bin:$PATH
 
-# openmpi 2.0.1
+# openmpi 4.1.4
 # Explicitly use the GCC 7 compilers to compile
-wget https://download.open-mpi.org/release/open-mpi/v2.0/openmpi-2.0.1.tar.gz
-tar -xf openmpi-2.0.1.tar.gz
-cd openmpi-2.0.1/
+wget https://download.open-mpi.org/release/open-mpi/v2.0/openmpi-4.1.4.tar.gz
+tar -xf openmpi-4.1.4.tar.gz
+cd openmpi-4.1.4/
 ./configure \
 --with-verbs \
 --with-psm2 \
@@ -61,7 +61,7 @@ CC=/opt/rh/devtoolset-7/root/usr/bin/gcc \
 FC=/opt/rh/devtoolset-7/root/usr/bin/gfortran
 make -j4
 make install
-rm -Rf /openmpi-2.0.1.tar.gz
+rm -Rf /openmpi-4.1.4.tar.gz
 
 # install cmake3 (needed for raxml-ng installation)
 yum install -y cmake3
